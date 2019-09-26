@@ -1,5 +1,5 @@
 <launch>
-    <node name="Chunks" pkg="robot_maze_runner" type="chuncks.py" output="screen"/>
     <node name="Clean_Lidar" pkg="robot_maze_runner" type="clean_lidar.py" output="screen"/>
+    <node name="Chunks" pkg="robot_maze_runner" type="chunks.py" output="screen"/>
     <node name="Wall_Follow" pkg="robot_maze_runner" type="wall_follow.py" output="screen"/>
 </launch>
