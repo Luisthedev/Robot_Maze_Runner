@@ -17,11 +17,7 @@ def chunk_callback(msg):
     chunks_array.append(get_min(152,212,msg_ar))
     chunks_array.append(get_min(213,273,msg_ar))
     chunks_array.append(get_min(274,329,msg_ar))
-    #chunks_array[2] = get_min(91,151,msg_ar)
-    #chunks_array[3] = get_min(152,212,msg_ar)
-    #chunks_array[4] = get_min(213,273,msg_ar)
-    #chunks_array[5] = get_min(274,329,msg_ar)
-
+    
     #print 'this is the chucks array: ' , chunks_array
     pub.publish(chunks_array)
 

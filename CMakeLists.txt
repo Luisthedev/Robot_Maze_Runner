@@ -50,10 +50,11 @@ add_message_files(
    lidar_msg.msg)
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   FakeNLP.srv
-# )
+add_service_files(
+  FILES
+  find_wall.srv
+)
+
 
 ## Generate actions in the 'action' folder
 # add_action_files(
