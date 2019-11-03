@@ -1,0 +1,14 @@
+# The goal
+float64 desired_rotation
+---
+# The result
+# boolean value stating whether the fully action was performed
+bool completed
+# Number of messages sent prior to completion
+uint32 updates_sent
+---
+# The feedback
+# Current odometry state returned by robot
+float64 degrees_rotated
+# The time elapsed since action initiation
+float64 time_elapsed

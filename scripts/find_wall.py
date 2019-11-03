@@ -8,10 +8,10 @@ from robot_maze_runner.msg import lidar_msg
 from robot_maze_runner.srv import find_wall
 import math
 
-
+data = []
 def scan_data_callback(msg):
     global data
-    data = msg.lidar_data
+    data = msg.l
 
 def find_wall_callback(msg):
     target = 1
@@ -36,7 +36,6 @@ def find_wall_callback(msg):
     print 'put of loop'
     return 0.0
 
-
 def min_dist_dir_degree_heading(min_dist_dir):
     x = min_dist_dir[1]
     print x
@@ -53,7 +52,6 @@ def min_dist_dir_degree_heading(min_dist_dir):
     elif x == 'front_left':
         return 270
 
-
 def newOdom_callback(msg):
     global x
     global y
@@ -64,8 +62,6 @@ def newOdom_callback(msg):
 
     rot_q = msg.pose.pose.orientation
     (roll, pitch, yaw) = euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
-
-
 
 def get_min_dist(data):
     dit_ar = []
@@ -104,7 +100,5 @@ scan_sub = rospy.Subscriber('/scan/chunks', lidar_msg, scan_data_callback)
 sub = rospy.Subscriber("/odom", Odometry, newOdom_callback)
 service = rospy.Service("find_wall",find_wall, find_wall_callback)
 cmd_vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
-
-data = [1]
 
 rospy.spin()
